@@ -9,10 +9,10 @@ import java.util.HashMap;
  */
 public interface NoteFunctions {
 
-    public Long insertNote(Note note);
+    public Long insertNote(Note note) throws Exception;
 
     public Note selectNote(Long id) throws Exception;
 
-    public void updateNote(Long id, Note note);
+    public void updateNote(Note note) throws Exception;
 
 }

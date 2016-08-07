@@ -33,7 +33,7 @@ public class LocalNote implements NoteFunctions{
         }
     }
 
-    public void updateNote(Long id, Note note){
-        map.put(id,note);
+    public void updateNote(Note note){
+        map.put(note.getId(),note);
     }
 }

@@ -6,21 +6,21 @@ package io.sbelkin.project.notes.store.entity;
 public class Note {
 
     private long id;
-    private String name;
+    private String user;
     private String context;
     private long date;
 
     public Note() {
     }
 
-    public Note(String name, String context, long date) {
-        this.name = name;
+    public Note(String user, String context, long date) {
+        this.user = user;
         this.context = context;
         this.date = date;
     }
-    public Note(long id, String name, String context, long date) {
+    public Note(long id, String user, String context, long date) {
         this.id = id;
-        this.name = name;
+        this.user = user;
         this.context = context;
         this.date = date;
     }
@@ -33,12 +33,12 @@ public class Note {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUser() {
+        return user;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getContext() {
@@ -61,7 +61,7 @@ public class Note {
     public String toString() {
         return "Note{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", user='" + user + '\'' +
                 ", context='" + context + '\'' +
                 ", date=" + date +
                 '}';
