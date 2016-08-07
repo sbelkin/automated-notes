@@ -1,4 +1,4 @@
-package io.sbelkin.project.notes.database;
+package io.sbelkin.project.notes.store.database;
 
 import io.sbelkin.project.notes.ConfigurationContainer;
 

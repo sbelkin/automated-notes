@@ -1,12 +1,8 @@
 package io.sbelkin.project.notes;
 
-import io.sbelkin.project.notes.database.NoteFunctions;
-import io.sbelkin.project.notes.database.entity.Note;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+import io.sbelkin.project.notes.store.NoteFunctions;
+import io.sbelkin.project.notes.store.entity.Note;
+import io.sbelkin.project.notes.store.local.LocalNote;
 
 /**
  * Created by sbelkin on 8/7/2016.
@@ -14,11 +10,13 @@ import java.util.Properties;
 public class Main {
 
     public static void main(String[] args) throws Exception{
-        NoteFunctions noteFunctions = new NoteFunctions();
+        LocalNote localNote = new LocalNote();
         Note note = new Note("a","asdsad ", System.currentTimeMillis()/1000);
-        long id = noteFunctions.insertNote(note);
+        long id = localNote.insertNote(note);
         System.out.println(id);
-        Note note1 = noteFunctions.selectNote(id);
+        Note note1 = localNote.selectNote(id);
         System.out.println(note1.toString());
+        Note note2 = localNote.selectNote(2L);
+
     }
 }

@@ -1,4 +1,4 @@
-package io.sbelkin.project.notes.database.entity;
+package io.sbelkin.project.notes.store.entity;
 
 /**
  * Created by sbelkin on 8/7/2016.
