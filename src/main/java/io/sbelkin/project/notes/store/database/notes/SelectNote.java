@@ -31,10 +31,11 @@ public class SelectNote extends DatabaseConnect {
             ResultSet resultSet = ps.executeQuery();
             Note note = new Note();
             while (resultSet.next()){
-                String user = resultSet.getString("user");
+                String name = resultSet.getString("name");
                 String context = resultSet.getString("context");
+                long userId = resultSet.getLong("user_id");
                 long date = resultSet.getLong("date");
-                note = new Note(id, user,context,date);
+                note = new Note(id, name,context,userId,date);
             }
             return note;
         } catch (Exception e){

@@ -6,23 +6,27 @@ package io.sbelkin.project.notes.store.entity;
 public class Note {
 
     private long id;
-    private String user;
+    private String name;
     private String context;
+    private long userId;
     private long date;
 
     public Note() {
     }
 
-    public Note(String user, String context, long date) {
-        this.user = user;
+    public Note(String name, String context, long userId, long date) {
+        this.name = name;
         this.context = context;
         this.date = date;
+        this.userId = userId;
     }
-    public Note(long id, String user, String context, long date) {
+
+    public Note(long id, String name, String context, long userId, long date) {
         this.id = id;
-        this.user = user;
+        this.name = name;
         this.context = context;
         this.date = date;
+        this.userId = userId;
     }
 
     public long getId() {
@@ -33,12 +37,12 @@ public class Note {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getName() {
+        return name;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getContext() {
@@ -47,6 +51,14 @@ public class Note {
 
     public void setContext(String context) {
         this.context = context;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public long getDate() {
@@ -61,8 +73,9 @@ public class Note {
     public String toString() {
         return "Note{" +
                 "id=" + id +
-                ", user='" + user + '\'' +
+                ", name='" + name + '\'' +
                 ", context='" + context + '\'' +
+                ", userId=" + userId +
                 ", date=" + date +
                 '}';
     }

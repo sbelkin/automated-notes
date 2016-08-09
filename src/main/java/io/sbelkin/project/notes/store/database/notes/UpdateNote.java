@@ -19,16 +19,18 @@ public class UpdateNote extends DatabaseConnect {
     }
 
     private String query(){
-        String insert = "INSERT INTO note (id,user,context,timestamp) values(?,?,?,Now())";
+//        create auto timestamp update on insedrt/update
+        String insert = "UPDATE note SET name=?, context=?, user_id=? where id=?";
         return insert;
     }
 
     public void process(Note note) throws Exception {
         try {
             PreparedStatement ps = connection.prepareStatement(query());
+            ps.setString(1, note.getName());
+            ps.setString(2, note.getContext());
+            ps.setLong(3,note.getUserId());
             ps.setLong(1, note.getId());
-            ps.setString(2, note.getUser());
-            ps.setString(3, note.getContext());
             int update = ps.executeUpdate();
             if (update == 0){
                 throw new Exception("No rows updated error.");

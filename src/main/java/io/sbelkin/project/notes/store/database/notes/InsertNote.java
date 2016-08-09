@@ -17,14 +17,14 @@ public class InsertNote extends DatabaseConnect {
     }
 
     private String query(){
-        String insert = "INSERT INTO note (user,context,timestamp) values(?,?,Now())";
+        String insert = "INSERT INTO note (name,context,timestamp) values(?,?,Now())";
         return insert;
     }
 
     public Long process(Note note) throws Exception {
         try {
             PreparedStatement ps = connection.prepareStatement(query(), Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, note.getUser());
+            ps.setString(1, note.getName());
             ps.setString(2, note.getContext());
             boolean update = ps.execute();
             if (update){

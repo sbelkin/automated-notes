@@ -21,6 +21,7 @@ public class LocalNote implements NoteFunctions{
 
     public Long insertNote(Note note){
         id +=1;
+        note.setId(id);
         map.put(id,note);
         return id;
     }
