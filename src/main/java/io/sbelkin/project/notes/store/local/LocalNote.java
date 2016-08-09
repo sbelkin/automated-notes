@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by sbelkin on 8/7/2016.
  */
-public class LocalNote implements NoteFunctions{
+public class LocalNote implements NoteFunctions {
 
     Long id;
     private HashMap<Long,Note> map;
