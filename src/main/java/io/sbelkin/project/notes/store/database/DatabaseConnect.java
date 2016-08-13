@@ -12,6 +12,8 @@ import java.util.Properties;
  */
 public class DatabaseConnect {
 
+
+
     public Connection initialize() throws SQLException {
         ConfigurationContainer configurationContainer = new ConfigurationContainer();
         Properties properties = configurationContainer.getProperties();
